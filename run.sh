@@ -1,8 +1,9 @@
 # MarketplaceDemo Run.sh
 
 apt-get update
-apt-get install zip
-unzip db.zip -d /var/
+apt-get install zip -y
+apt-get install docker -y
+apt-get install docker-compose -y
 
 docker stop web
 docker stop ubuntu_db_1
@@ -11,7 +12,7 @@ docker rm web
 docker rm ubuntu_db_1
 docker rm myadmin
 
-docker-compose up -d
+docker-compose -p "ubuntu" up -d
 docker build -t dockernginx .
 
 cd /var/
