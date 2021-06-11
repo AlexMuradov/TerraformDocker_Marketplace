@@ -5,6 +5,8 @@ apt-get install zip -y
 apt-get install docker -y
 apt-get install docker-compose -y
 
+unzip db.zip -d /var/ -y
+
 docker stop web
 docker stop ubuntu_db_1
 docker stop myadmin
